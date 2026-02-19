@@ -1,0 +1,13 @@
+.button {
+  height: 2.87rem;
+  width: 6.87rem;
+  background-color: #6363DB;
+  color: white;
+  border: 2px solid #4F4FB9;
+
+  margin-left: .75rem;
+  font-size: 1rem;
+  border-radius: .43rem;
+
+  font-family: "Noto Sans", sans-serif;
+}
