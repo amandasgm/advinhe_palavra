@@ -11,3 +11,15 @@
 
   font-family: "Noto Sans", sans-serif;
 }
+
+.lose{
+  background-color: #5f1b1b;
+  color: white;
+  border: 2px solid #5f1b1b;
+}
+
+.win {
+  background-color: #1b5f36;
+  color: white;
+  border: 2px solid #1b5f36;
+}

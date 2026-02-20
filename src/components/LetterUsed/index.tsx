@@ -1,13 +1,13 @@
 import styles from "./style.module.css";
 import { Letter } from "../Letter/index";
 
-export type LetterUsed = {
+export type LetterUsedProps = {
   value: string;
   correct: boolean; // falso ou verdadeiro
 };
 
 type Props = {
-  data: LetterUsed[];
+  data: LetterUsedProps[];
 };
 
 export function LetterUsed({ data }: Props) {

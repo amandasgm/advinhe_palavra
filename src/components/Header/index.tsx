@@ -5,7 +5,7 @@ import styles from "./style.module.css"
 
 type Props = {
   current: number
-  maximo: number
+  maximo: any
   onRestart: () => void
 }
 
