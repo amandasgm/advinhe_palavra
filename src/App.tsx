@@ -25,6 +25,8 @@ export function App() {
     const randomWord = WORDS[index]; // selecionou o objeto do array WORDS
     setChallenge(randomWord); // setou o estado do desafio com o objeto sorteado
     setTip(randomWord.tip); // setou o estado da dica com a dica do objeto sorteado
+    setLettersUsed([])
+    setScore(0)
   }
 
   // derived boolean that says whether every letter of the challenge
@@ -93,6 +95,12 @@ export function App() {
       return;
     }
 
+    function handleRestart() {
+      setChallenge(null);
+      setLettersUsed([]);
+      setScore(0);
+    }
+
     setLettersUsed((prev) => [...prev, { value, correct }]);
     setLetter("");
     setScore(newScore);
@@ -108,7 +116,7 @@ export function App() {
         <Header
           current={score}
           maximo={challenge?.attemps}
-          onRestart={() => {}}
+          onRestart={() => {startGame()}}
         />
         <Tip tip={tip} />
 
