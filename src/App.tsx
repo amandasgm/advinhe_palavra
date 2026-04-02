@@ -95,12 +95,6 @@ export function App() {
       return;
     }
 
-    function handleRestart() {
-      setChallenge(null);
-      setLettersUsed([]);
-      setScore(0);
-    }
-
     setLettersUsed((prev) => [...prev, { value, correct }]);
     setLetter("");
     setScore(newScore);
