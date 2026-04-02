@@ -19,6 +19,7 @@ export function App() {
   const [tip, setTip] = useState("");
   const [lettersUsed, setLettersUsed] = useState<LetterUsedProps[]>([]);
   const [score, setScore] = useState(0);
+  const [shake, setShake] = useState(false);
 
   function startGame() {
     const index = Math.floor(Math.random() * WORDS.length); // sortear um item aleatório entre os itens de WORDS
@@ -98,6 +99,11 @@ export function App() {
     setLettersUsed((prev) => [...prev, { value, correct }]);
     setLetter("");
     setScore(newScore);
+
+    if (!correct) {
+      setShake(true);
+      setTimeout(() => setShake(false), 500); // remove o shake após 500ms
+    }
   }
 
   useEffect(() => {
@@ -114,7 +120,7 @@ export function App() {
         />
         <Tip tip={tip} />
 
-        <div className={styles.word}>
+        <div className={`${styles.word} ${shake && styles.shake}`}>
           {challenge?.word.split("").map((l, index) => {
             // check if this letter has been guessed correctly
             const used = lettersUsed.find(

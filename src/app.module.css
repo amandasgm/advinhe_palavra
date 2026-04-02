@@ -35,3 +35,16 @@
 .container .div {
   margin-top: .75rem;
 }
+
+
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-10px, 0); }
+  50% { transform: translate(10px, 0); }
+  75% { transform: translate(-10px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake {
+  animation: shake 0.2s ease-in-out;
+}
